@@ -1,31 +1,56 @@
-<div class="row">
-	<div class="col-md-8" >
-				    
-	      <div class="image">
-         <%= image_tag @pageant.image.url, class: "img-responsive center-block" if @pageant.image? %>
-        </div>
-    </br>
-  <div align="center">
+<div align="center">
     <ul class="list-inline" id="links">
       
-      <li>Add Contestant</li>
-      <li>Edit</li>
+      <li><%= link_to "Add Contestant", new_pageant_contestant_path(@pageant) %></li>
+      <li><%= link_to "Edit Vote", edit_pageant_path %></li>
       <!--<li><a href="#">Delete</a></li>-->
       <li>Delete</li>
       <!--<li><a href="#">Something...</a></li>-->
     </ul>
   </div>
-  <!--Panel starts from here-->
-  <div class="panel panel-default col-md-8">
-    <div class="panel-body">
-      <h4 align="center" class="panel-title"><b>Vote Created</b></h4>
-    </div>
+
+
+<div class="panel panel-success">
   <div class="panel-body">
-          <h4 align="center"><%= @pageant.name %></h4>
-          <h4 align="center"><%= @pageant.description  %></h4>
-          <h4 align="center"><%= @pageant.category  %></h4>
-          <h4 align="center"><b>Starting:</b> <%= @pageant.startdate.to_s %></h4>
-          <h4 align="center"><b>Ending:</b> <%= @pageant.enddate.to_s %></h4>
-          <h4 align="center"><b>Time Zone:</b> <%= @pageant.time_zone  %></h4>
-		</div>
-  </div>
+    <div class="row">
+      <div class="col-md-8">
+        <%= image_tag @pageant.image_url  %>
+        <div class="table-responsive">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td><strong>Name</strong></td>
+                <td><%= @pageant.name %></td>
+              </tr> 
+              <tr>
+                <td><strong>Description</strong></td>
+                <td><%= @pageant.description %></td>
+              </tr>
+              <tr>
+                <td><strong>Category</strong></td>
+                <td><%= @pageant.category %></td>
+              </tr> 
+              <tr>
+                <td><strong>Start date</strong></td>
+                <td><%= @pageant.startdate %></td>
+              </tr> 
+              <tr>
+                <td><strong>End Date</strong></td>
+                <td><%= @pageant.enddate %></td>
+              </tr> 
+              <tr>
+                <td><strong>Time Zone</strong></td>
+                <td><%= @pageant.time_zone %></td>
+              </tr> 
+              
+              <div class="row">
+                <% @contestants.each do |contestant| %>
+                <div class="col-sm-6 col-md-3">
+                <div class="=thumbnail">
+       
+                <h4 align="left" class="triad"><%= contestant.name %></h4>
+                <%= image_tag( contestant.image, size: "180x180" ) %>
+                </div>
+                </div>
+                <% end %>
+                </div>

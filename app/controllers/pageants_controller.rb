@@ -12,6 +12,7 @@ class PageantsController < ApplicationController
   # GET /pageants/1
   # GET /pageants/1.json
   def show
+    @contestants = Contestant.where(pageant_id: @pageant.id).order("created_at DESC")
   end
 
   # GET /pageants/new
