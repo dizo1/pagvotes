@@ -1,0 +1,60 @@
+<div class="login_create">
+<%= form_for(pageant, :html => {class: "form-signin", multipart: true, role: "form"}) do |f| %>
+  <% if pageant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pageant.errors.count, "error") %> prohibited this pageant from being saved:</h2>
+
+      <ul>
+      <% pageant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name, 'name', class: 'sr-only' %>
+    <%= f.text_field :name, autofocus: true, class: 'form-control', placeholder: 'Name' %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :description, 'description', class: 'sr-only' %>
+    <%= f.text_area :description, autofocus: true, class: 'form-control', placeholder: 'Description' %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :category, 'category', class: 'sr-only' %>
+    <%= f.text_field :category, autofocus: true, class: 'form-control', placeholder: 'category' %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :startdate, 'startdate', class: 'sr-only' %>
+    <%= f.date_field :startdate, class: 'form-control', placeholder: 'Enter start Date' %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :enddate, 'enddate', class: 'sr-only' %>
+    <%= f.date_field :enddate, class: "form-control", placeholder: "Enter the end date" %>
+  </div>
+  <br>
+  <div class="form-group">
+    <div class="control-label col-md-2">
+      <%= f.label :time_zone, 'timezone' %>
+    </div>
+  <div class="col-md-8">
+      <%= f.time_zone_select :time_zone, nil, {}, class: 'form-control' %>
+    </div>
+  </div>
+  <br>
+  <div class="col-md-8">
+    <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png', class: "btn btn-primary btn-sm" %>
+  </div>
+  <br>
+  <div form-group>
+    <div class="col-md-offset-2 col-md-10">
+      <%=  f.submit class: "btn btn-primary btn-md" %>
+    </div>  
+  </div>
+<% end %>
+
+</div>

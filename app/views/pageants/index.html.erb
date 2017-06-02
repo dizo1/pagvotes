@@ -1,0 +1,22 @@
+
+<p id="notice"><%= notice %></p>
+
+ <div class="jumbotron center">
+       <h1 align="center">welcome to ezyvote</h1>  
+      <!-- <h2 align="center">The best Pageant Voting app</h2>-->
+       <p align="center"><%= link_to "login with facebook","#", class: "btn btn-danger 
+       btn-lg btn-xlarge" %></p>
+  </div>
+
+<h1 align="center">Pageants</h1><hr />
+    <div class="row">
+    <% @pageants.each do |pageant| %>
+      <div class="col-sm-6 col-md-3">
+        <div class="=thumbnail">
+       
+          <h4 align="left" class="triad"><%= link_to pageant.name, pageant_path(pageant) %></h4>
+          <%= image_tag( pageant.image, size: "180x180" ) %>
+        </div>
+      </div>
+      <% end %>
+      </div>

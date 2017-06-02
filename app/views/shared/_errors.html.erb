@@ -1,0 +1,11 @@
+  <% if contestant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(contestant.errors.count, "error") %> prohibited this contestant from being saved:</h2>
+
+      <ul>
+      <% contestant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>

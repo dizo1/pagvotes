@@ -1,0 +1,113 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ 
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+$navbar-default-bg: #186CA2;
+body { 
+    padding-top: 60px; 
+    padding-bottom: 20px;
+    background:#bec4d1;
+    height:100%;
+}
+
+.jumbotron h1{
+    color:white;
+    text-align:center;
+    margin-bottom:45px;
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+.jumbotron h2{
+    color:#fff;
+    text-align:center;
+    margin-bottom:30px;
+    letter-spacing: -1px;
+    font-weight: bold;
+  
+}
+.jumbotron{
+    background-image: asset-url('pageant.jpg');
+    background-size:cover;
+    height:480px;
+    
+
+}
+.btn-xlarge{
+    background-color:#186CA2;
+}
+.login_edit{
+  text-align: center;
+  max-width: 500px;
+  padding: 19px 29px 29px;
+  margin: 0 auto 10px;
+  margin-top:50px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+
+
+.login_create{
+    text-align: center;
+  max-width: 600px;
+  max-height: 700px;
+  padding: 19px 29px 29px;
+  margin: 0 auto 10px;
+  margin-top:15px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+
+.login{
+    text-align: center;
+    max-width: 400px;
+  padding: 19px 29px 29px;
+  margin: 0 auto 10px;
+  margin-top:50px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+
+#footer {
+  margin-left: 0px;
+  top: 40px;
+  color: white;
+  width:auto;
+  margin-right: 0px;
+  background-color: #186CA2;
+  height:50px;
+  bottom: 0px;
+  position:relative;
+}
