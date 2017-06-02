@@ -1,14 +1,13 @@
 <div align="center">
     <ul class="list-inline" id="links">
-      
+      <% if user_signed_in? && current_user.id == @pageant.user.id %>
       <li><%= link_to "Add Contestant", new_pageant_contestant_path(@pageant) %></li>
       <li><%= link_to "Edit Vote", edit_pageant_path %></li>
-      <!--<li><a href="#">Delete</a></li>-->
-      <li>Delete</li>
-      <!--<li><a href="#">Something...</a></li>-->
+      <li><%= link_to "Delete", @pageant, method: :delete,
+       data: { confirm: "Are you sure you want to delete this pageant?"} %></li>
     </ul>
   </div>
-
+  <%  end %>
 
 <div class="panel panel-success">
   <div class="panel-body">
