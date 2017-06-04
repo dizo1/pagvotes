@@ -17,6 +17,19 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+ h1 {
+  font-family: "Roboto Slab";
+ }
+
+body {
+  font-family: 'Roboto';
+  background: #edf0f6;
+}
+
+#logo{
+    font-size: 1.6em;
+}
 $navbar-default-bg: #186CA2;
 body { 
     padding-top: 60px; 
@@ -24,6 +37,71 @@ body {
     background:#bec4d1;
     height:100%;
 }
+a:link {
+    text-decoration: none;
+    font-size: 1.4em;
+}
+
+/*flash*/
+.alert-error {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+ }
+
+.alert-alert {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+ }
+
+.alert-success {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+ }
+
+.alert-notice {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+ }
+
+::-webkit-input-placeholder {
+ font-size: 14px;
+ color: #d0cdfa;
+ text-transform: none;
+ text-align: center;
+ font-weight: bold;
+}
+:-moz-placeholder { /* older Firefox*/
+ font-size:14px;
+ color: #d0cdfa;
+ text-transform: uppercase;
+ text-align: center;
+ font-weight: bold;
+}
+::-moz-placeholder { /* Firefox 19+ */ 
+ font-size: 14px;
+ color: #d0cdfa; 
+ text-transform: uppercase;
+ text-align: center;
+ font-weight: bold;
+} 
+:-ms-input-placeholder { 
+ font-size: 14px; 
+ color: #d0cdfa;
+ text-transform: none;
+ text-align: center;
+ font-weight: bold;
+}
+
+
+
 
 .jumbotron h1{
     color:white;
@@ -110,4 +188,14 @@ body {
   height:50px;
   bottom: 0px;
   position:relative;
+}
+.btn{
+    margin-top: 4px;
+}
+.img-style{
+    border-radius: 8px;
+    position:left;
+}
+hr.style1{
+	border-top: 1.5px solid #8c8b8b;
 }

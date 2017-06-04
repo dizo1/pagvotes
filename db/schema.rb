@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170602025055) do
+ActiveRecord::Schema.define(version: 20170604155840) do
 
   create_table "contestants", force: :cascade do |t|
     t.integer  "con_num"
@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 20170602025055) do
     t.string   "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "user_id"
     t.integer  "pageant_id"
+    t.integer  "user_id"
   end
 
   create_table "pageants", force: :cascade do |t|

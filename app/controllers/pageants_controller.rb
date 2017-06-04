@@ -1,6 +1,6 @@
 class PageantsController < ApplicationController
-  before_action :set_pageant, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_pageant, only: [:edit, :update, :destroy]
+  before_filter :authenticate_user!, except: [:index, :show]
   
   
   # GET /pageants
@@ -12,19 +12,21 @@ class PageantsController < ApplicationController
   # GET /pageants/1
   # GET /pageants/1.json
   def show
+    @pageant = Pageant.find(params[:id])
     @contestants = Contestant.where(pageant_id: @pageant.id).order("created_at DESC")
   end
 
   # GET /pageants/new
   def new
-    @pageant = current_user.pageants.build
+    #@pageant = current_user.pageants.build
+    @pageant = Pageant.new
   end
 
   # POST /pageants
   # POST /pageants.json
   def create
-    @pageant = current_user.pageants.build(pageant_params)
-
+   # @pageant = current_user.pageants.build(pageant_params)
+    @pageant = Pageant.new(pageant_params)
     respond_to do |format|
       if @pageant.save
         format.html { redirect_to @pageant, notice: 'Pageant was successfully created.' }
@@ -35,7 +37,6 @@ class PageantsController < ApplicationController
       end
     end
   end
-
   # PATCH/PUT /pageants/1
   # PATCH/PUT /pageants/1.json
   def update
@@ -49,7 +50,6 @@ class PageantsController < ApplicationController
       end
     end
   end
-
   # GET /pageants/1/edit
   def edit
   end
@@ -62,7 +62,6 @@ class PageantsController < ApplicationController
       format.html { redirect_to pageants_url, notice: 'Pageant was successfully destroyed.' }
       format.json { head :no_content }
     end
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -74,4 +73,5 @@ class PageantsController < ApplicationController
     def pageant_params
       params.require(:pageant).permit(:name, :description, :category, :startdate, :enddate, :time_zone, :image)
     end
+  end
 end

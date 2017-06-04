@@ -1,5 +1,5 @@
 <div class="login_create">
-<%= form_for(pageant, :html => {class: "form-signin", multipart: true, role: "form"}) do |f| %>
+<%= form_for(@pageant, :html => {class: "form-signin", multipart: true, role: "form"}) do |f| %>
   <% if pageant.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(pageant.errors.count, "error") %> prohibited this pageant from being saved:</h2>
@@ -45,6 +45,7 @@
       <%= f.time_zone_select :time_zone, nil, {}, class: 'form-control' %>
     </div>
   </div>
+  <br>
   <br>
   <div class="col-md-8">
     <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png', class: "btn btn-primary btn-sm" %>

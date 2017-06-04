@@ -1,19 +1,17 @@
 <div align="center">
     <ul class="list-inline" id="links">
-      <% if user_signed_in? && current_user.id == @pageant.user.id %>
-      <li><%= link_to "Add Contestant", new_pageant_contestant_path(@pageant) %></li>
-      <li><%= link_to "Edit Vote", edit_pageant_path %></li>
-      <li><%= link_to "Delete", @pageant, method: :delete,
-       data: { confirm: "Are you sure you want to delete this pageant?"} %></li>
+     
+      <li>Add Contestant</li>
+      <li>Edit Contest</li>
+      <li>Delete</li>
     </ul>
   </div>
-  <%  end %>
 
-<div class="panel panel-success">
+<div class="panel panel-success col-md-9 ">
   <div class="panel-body">
     <div class="row">
-      <div class="col-md-8">
-        <%= image_tag @pageant.image_url  %>
+      <div class="col-md-9">
+        <%= image_tag @pageant.image_url, class: "img-style"  %></br></br>
         <div class="table-responsive">
           <table class="table">
             <tbody>
@@ -48,15 +46,53 @@
               </div>
               </div>
               </div>
+          <div class="panel col-md-3">
+            <h4>Something Nice here</h4>
+          </div>
               
               <div class="row">
                 <% @contestants.each do |contestant| %>
-                <div class="col-sm-6 col-md-3">
-                <div class="=thumbnail">
-       
-                <h4 align="left" class="triad"><%= contestant.name %></h4>
-                <%= image_tag( contestant.image, size: "180x180" ) %>
-                </div>
+                <div class="col-xs-12 col-sm-9 col-md-offset-3">
+                  <div class="well col-md-8">
+                    <div class="=thumbnail">
+                      <h4><%= contestant.name %></h4>
+                      <%= image_tag( contestant.image, size: "150x150", class: "img-style" ) %>
+                      
+                       <button type="button" class="btn btn-success btn-lg btn-block" >Vote</button>
+                    </div>
+                  </div>
                 </div>
                 <% end %>
                 </div>
+                
+                
+                <!--Second Profile begins here-->
+                
+                
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-offset-3">
+            <div class="well well-sm centered">
+                <div class="row">
+                <% @contestants.each do |contestant| %>
+                    <div class="col-sm-6 col-md-4">
+                         <%= image_tag( contestant.image, size: "150x150", class: "img-style" ) %>
+                    </div>
+                    <div class="col-sm-6 col-md-8">
+                    		<h4>Contestant Number: <%= contestant.con_num %></h4>
+                          <h4>
+                            <h4><%= contestant.name %></h4>
+                           </h4>
+                        <p>
+                            <i class="glyphicon glyphicon-check"></i>25,000 Votes</p>
+
+                            <button type="button" class="btn btn-success btn-md btn-block" >Vote</button>
+                            <hr class="style1">
+                     
+                    </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+
+
+          

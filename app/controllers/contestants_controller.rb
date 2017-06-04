@@ -16,7 +16,7 @@ class ContestantsController < ApplicationController
   # POST /contestants.json
   def create
     @contestant = Contestant.new(contestant_params)
-    @contestant.user_id = current_user.id 
+    #@contestant.user_id = current_user.id 
     @contestant.pageant_id = @pageant.id
     
     respond_to do |format|
@@ -63,6 +63,6 @@ class ContestantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contestant_params
-      params.require(:contestant).permit(:con_num, :name, :profile, :image)
+      params.require(:contestant).permit(:con_num, :name, :profile, :image, :pageant_id)
     end
 end
